@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='backbutton.png') }}');
+            background-size: cover; /* Đảm bảo ảnh nền bao phủ toàn bộ trang */
+            background-position: center; /* Đặt ảnh nền ở giữa */
+            background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='BLACK.png') }}" alt="Logo" class="logo">
+        <h1>9.5 AI Image Caption</h1>
+        <h2>Upload an Image</h2>
+        <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

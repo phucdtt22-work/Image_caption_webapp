@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Caption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='backbutton.png') }}');
+            background-size: cover; /* Đảm bảo ảnh nền bao phủ toàn bộ trang */
+            background-position: center; /* Đặt ảnh nền ở giữa */
+            background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image and Caption</h1>
+        <div class="result">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='uploaded_image.jpg') }}" alt="Uploaded Image">
+            </div>
+            <div class="caption-container">
+                <p>{{ caption }}</p>
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}">Upload another image</a>
+    </div>
+</body>
+</html>
+
